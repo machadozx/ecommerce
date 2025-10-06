@@ -3,45 +3,69 @@
 const products = [
     {
         id: 1,
-        name: "Cadeira de Escritório Minimalista",
+        name: "escrivaninha",
         price: 599.99,
-        image: "image/Cadeira de Escritório Minimalista.avif"
+        image: "image/escrivaninha.jpg"
     },
     {
         id: 2,
-        name: "Mesa de Centro Moderna",
+        name: "Sofá cor Beje",
         price: 349.99,
-        image: "image/mesa.webp"
+        image: "image/sofa cor beje.jpg"
     },
     {
         id: 3,
-        name: "Luminária de Mesa Elegante",
-        price: 129.99,
-        image: "image/Luminária de Mesa Elegante.avif"
+        name: "Kit sala de Estar",
+        price: 999.99,
+        image: "image/kit completo para sala de estar.jpg"
     },
     {
         id: 4,
-        name: "Vaso Decorativo Cerâmica",
-        price: 79.99,
-        image: "image/Vaso Decorativo Cerâmica.avif"
+        name: "Jogo de cozinha",
+        price: 899.99,
+        image: "image/jogo de cozinha.jpg"
     },
     {
         id: 5,
-        name: "Conjunto de Canetas Premium",
-        price: 45.99,
-        image: "image/Conjunto de Canetas Premium.avif"
+        name: "Hack tv",
+        price: 399.99,
+        image: "image/hack para tv.jpg"
     },
     {
         id: 6,
-        name: "Caderno de Notas Capa Dura",
+        name: "Guarda roupas",
         price: 29.99,
-        image: "image/Caderno de Notas Capa Dura.avif"
+        image: "image/guarda roupas.jpg"
     },
     {
         id: 7,
-        name: "Sofá Vintage",
-        price: 799.99,
-        image: "image/Sofá Vintage.avif"
+        name: "Escrivaninha",
+        price: 399.99,
+        image: "image/escrivaninha.jpg"
+    },
+    {
+        id: 8,
+        name: "Estante",
+        price: 599.99,
+        image: "image/estante.jpg"
+    },
+    {
+        id: 9,
+        name: "Cadeira",
+        price: 199.99,
+        image: "image/cadeira.jpg"
+    },
+    {
+        id: 10,
+        name: "Kit de Cozinha",
+        price: 99.99,
+        image: "image/kit de cozinha.jpg"
+    },
+    {
+        id: 11,
+        name: "Relógio",
+        price: 89.99,
+        image: "image/relógio.jpg"
     },
 ];
 
