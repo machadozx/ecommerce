@@ -3,19 +3,19 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
 }
 
 body {
-    background-color: #f8f9fa;
-    color: #333;
+    background-color: #1b1b1b;
+    color: #c7c7c7;
     line-height: 1.6;
 }
 
 /* Cabeçalho */
 header {
-    background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    background-color: #141414;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     padding: 1rem 2rem;
     position: sticky;
     top: 0;
@@ -33,11 +33,11 @@ header {
 .logo {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #2c3e50;
+    color: #66c0f4;
 }
 
 .logo span {
-    color: #ff0000;
+    color: #ffffff;
 }
 
 nav ul {
@@ -51,13 +51,13 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #555;
+    color: #c7c7c7;
     font-weight: 500;
     transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #3498db;
+    color: #66c0f4;
 }
 
 .cart-icon {
@@ -69,7 +69,7 @@ nav ul li a:hover {
     position: absolute;
     top: -8px;
     right: -8px;
-    background-color: #e74c3c;
+    background-color: #e50914;
     color: white;
     border-radius: 50%;
     width: 18px;
@@ -82,14 +82,14 @@ nav ul li a:hover {
 
 /* Banner principal */
 .hero {
-    background-color: #ff0000;
-    color: white;
-    padding: 4rem 2rem;
+    background-color: #0b0b0b;
+    color: #ffffff;
+    padding: 5rem 2rem;
     text-align: center;
 }
 
 .hero h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
 }
 
@@ -101,8 +101,8 @@ nav ul li a:hover {
 
 .btn {
     display: inline-block;
-    background-color: #fff;
-    color: #3498db;
+    background-color: #66c0f4;
+    color: #141414;
     padding: 0.8rem 1.5rem;
     border-radius: 4px;
     text-decoration: none;
@@ -111,7 +111,7 @@ nav ul li a:hover {
 }
 
 .btn:hover {
-    background-color: #f1f1f1;
+    background-color: #3a9ad9;
     transform: translateY(-2px);
 }
 
@@ -126,7 +126,7 @@ nav ul li a:hover {
     text-align: center;
     margin-bottom: 2rem;
     font-size: 2rem;
-    color: #2c3e50;
+    color: #ffffff;
 }
 
 .products-grid {
@@ -136,45 +136,45 @@ nav ul li a:hover {
 }
 
 .product-card {
-    background-color: white;
-    border-radius: 8px;
+    background-color: #1e1e1e;
+    border-radius: 6px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .product-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
 }
 
 .product-image {
     width: 100%;
-    height: 200px;
+    height: 220px;
     object-fit: cover;
 }
 
 .product-info {
-    padding: 1.5rem;
+    padding: 1rem;
 }
 
 .product-title {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
-    color: #2c3e50;
+    color: #ffffff;
 }
 
 .product-price {
     font-size: 1.3rem;
     font-weight: 700;
-    color: #ff0000;
+    color: #66c0f4;
     margin-bottom: 1rem;
 }
 
 .add-to-cart {
     width: 100%;
     padding: 0.7rem;
-    background-color: #ff0000;
+    background-color: #e50914;
     color: white;
     border: none;
     border-radius: 4px;
@@ -184,7 +184,7 @@ nav ul li a:hover {
 }
 
 .add-to-cart:hover {
-    background-color: #ff0000;
+    background-color: #b0060f;
 }
 
 /* Carrinho lateral */
@@ -194,8 +194,8 @@ nav ul li a:hover {
     right: -400px;
     width: 350px;
     height: 100vh;
-    background-color: white;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    background-color: #1b1b1b;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.7);
     padding: 2rem;
     transition: right 0.3s ease;
     z-index: 1000;
@@ -212,7 +212,7 @@ nav ul li a:hover {
     align-items: center;
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #333;
 }
 
 .close-cart {
@@ -220,7 +220,7 @@ nav ul li a:hover {
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
-    color: #555;
+    color: #c7c7c7;
 }
 
 .cart-items {
@@ -231,7 +231,7 @@ nav ul li a:hover {
     display: flex;
     margin-bottom: 1rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #333;
 }
 
 .cart-item-image {
@@ -249,17 +249,18 @@ nav ul li a:hover {
 .cart-item-title {
     font-weight: 600;
     margin-bottom: 0.3rem;
+    color: #ffffff;
 }
 
 .cart-item-price {
-    color: #ff0000;
+    color: #66c0f4;
     font-weight: 600;
 }
 
 .cart-item-remove {
     background: none;
     border: none;
-    color: #e74c3c;
+    color: #e50914;
     cursor: pointer;
     font-size: 0.9rem;
 }
@@ -269,13 +270,14 @@ nav ul li a:hover {
     font-weight: 700;
     text-align: right;
     margin-bottom: 1.5rem;
+    color: #ffffff;
 }
 
 .checkout-btn {
     width: 100%;
     padding: 1rem;
-    background-color: #2ecc71;
-    color: white;
+    background-color: #66c0f4;
+    color: #141414;
     border: none;
     border-radius: 4px;
     font-weight: 600;
@@ -284,7 +286,7 @@ nav ul li a:hover {
 }
 
 .checkout-btn:hover {
-    background-color: #27ae60;
+    background-color: #3a9ad9;
 }
 
 /* Overlay para o carrinho */
@@ -294,7 +296,7 @@ nav ul li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     z-index: 999;
     display: none;
 }
@@ -305,15 +307,10 @@ nav ul li a:hover {
 
 /* Rodapé */
 footer {
-    background-color: #2c3e50;
-    color: white;
+    background-color: #141414;
+    color: #c7c7c7;
     padding: 3rem 2rem;
     text-align: center;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .footer-links {
@@ -323,14 +320,14 @@ footer {
 }
 
 .footer-links a {
-    color: white;
+    color: #66c0f4;
     margin: 0 1rem;
     text-decoration: none;
 }
 
 .footer-links a:hover {
     text-decoration: underline;
-    color: #e74c3c;
+    color: #ffffff;
 }
 
 /* Responsividade */
@@ -349,7 +346,7 @@ footer {
     }
 
     .hero h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
     .hero p {

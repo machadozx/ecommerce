@@ -1,78 +1,28 @@
-
+// =========================
 // Dados dos produtos
+// =========================
 const products = [
-    {
-        id: 1,
-        name: "escrivaninha",
-        price: 599.99,
-        image: "image/escrivaninha.jpg"
-    },
-    {
-        id: 2,
-        name: "Sofá cor Beje",
-        price: 349.99,
-        image: "image/sofa cor beje.jpg"
-    },
-    {
-        id: 3,
-        name: "Kit sala de Estar",
-        price: 999.99,
-        image: "image/kit completo para sala de estar.jpg"
-    },
-    {
-        id: 4,
-        name: "Jogo de cozinha",
-        price: 899.99,
-        image: "image/jogo de cozinha.jpg"
-    },
-    {
-        id: 5,
-        name: "Hack tv",
-        price: 399.99,
-        image: "image/hack para tv.jpg"
-    },
-    {
-        id: 6,
-        name: "Guarda roupas",
-        price: 29.99,
-        image: "image/guarda roupas.jpg"
-    },
-    {
-        id: 7,
-        name: "Escrivaninha",
-        price: 399.99,
-        image: "image/escrivaninha.jpg"
-    },
-    {
-        id: 8,
-        name: "Estante",
-        price: 599.99,
-        image: "image/estante.jpg"
-    },
-    {
-        id: 9,
-        name: "Cadeira",
-        price: 199.99,
-        image: "image/cadeira.jpg"
-    },
-    {
-        id: 10,
-        name: "Kit de Cozinha",
-        price: 99.99,
-        image: "image/kit de cozinha.jpg"
-    },
-    {
-        id: 11,
-        name: "Relógio",
-        price: 89.99,
-        image: "image/relógio.jpg"
-    },
+    { id: 1, name: "Escrivaninha", price: 599.99, image: "image/escrivaninha.jpg" },
+    { id: 2, name: "Sofá cor Beje", price: 349.99, image: "image/sofa cor beje.jpg" },
+    { id: 3, name: "Kit sala de Estar", price: 999.99, image: "image/kit completo para sala de estar.jpg" },
+    { id: 4, name: "Jogo de cozinha", price: 899.99, image: "image/jogo de cozinha.jpg" },
+    { id: 5, name: "Hack tv", price: 399.99, image: "image/hack para tv.jpg" },
+    { id: 6, name: "Guarda roupas", price: 29.99, image: "image/guarda roupas.jpg" },
+    { id: 7, name: "Escrivaninha", price: 399.99, image: "image/escrivaninha.jpg" },
+    { id: 8, name: "Estante", price: 599.99, image: "image/estante.jpg" },
+    { id: 9, name: "Cadeira", price: 199.99, image: "image/cadeira.jpg" },
+    { id: 10, name: "Kit de Cozinha", price: 99.99, image: "image/kit de cozinha.jpg" },
+    { id: 11, name: "Relógio", price: 89.99, image: "image/relógio.jpg" },
 ];
 
+// =========================
 // Estado do carrinho
+// =========================
 let cart = [];
 
+// =========================
 // Elementos DOM
+// =========================
 const productsGrid = document.getElementById('products-grid');
 const cartIcon = document.getElementById('cart-icon');
 const cartSidebar = document.getElementById('cart-sidebar');
@@ -82,16 +32,19 @@ const cartItems = document.getElementById('cart-items');
 const cartTotal = document.getElementById('cart-total');
 const cartCount = document.getElementById('cart-count');
 
-// Inicializar a página
+// =========================
+// Inicialização
+// =========================
 document.addEventListener('DOMContentLoaded', () => {
     renderProducts();
     updateCart();
 });
 
+// =========================
 // Renderizar produtos
+// =========================
 function renderProducts() {
     productsGrid.innerHTML = '';
-    
     products.forEach(product => {
         const productCard = document.createElement('div');
         productCard.className = 'product-card';
@@ -106,62 +59,57 @@ function renderProducts() {
         productsGrid.appendChild(productCard);
     });
 
-    // Adicionar event listeners aos botões
+    // Eventos de adicionar ao carrinho
     document.querySelectorAll('.add-to-cart').forEach(button => {
         button.addEventListener('click', (e) => {
-            const productId = parseInt(e.target.getAttribute('data-id'));
+            const productId = parseInt(e.target.dataset.id);
             addToCart(productId);
         });
     });
 }
 
+// =========================
 // Adicionar produto ao carrinho
+// =========================
 function addToCart(productId) {
     const product = products.find(p => p.id === productId);
-    
-    // Verificar se o produto já está no carrinho
     const existingItem = cart.find(item => item.id === productId);
-    
+
     if (existingItem) {
         existingItem.quantity += 1;
     } else {
-        cart.push({
-            ...product,
-            quantity: 1
-        });
+        cart.push({ ...product, quantity: 1 });
     }
-    
+
     updateCart();
     showNotification(`${product.name} adicionado ao carrinho!`);
 }
 
+// =========================
 // Remover produto do carrinho
+// =========================
 function removeFromCart(productId) {
     cart = cart.filter(item => item.id !== productId);
     updateCart();
 }
 
+// =========================
 // Atualizar carrinho
+// =========================
 function updateCart() {
-    // Atualizar contador
-    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-    cartCount.textContent = totalItems;
-    
-    // Atualizar lista de itens
+    cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
     cartItems.innerHTML = '';
-    
+
     if (cart.length === 0) {
-        cartItems.innerHTML = '<p>Seu carrinho está vazio</p>';
+        cartItems.innerHTML = '<p style="color:#c7c7c7;">Seu carrinho está vazio</p>';
         cartTotal.textContent = '0.00';
         return;
     }
-    
+
     let total = 0;
-    
     cart.forEach(item => {
-        const itemTotal = item.price * item.quantity;
-        total += itemTotal;
-        
+        total += item.price * item.quantity;
+
         const cartItem = document.createElement('div');
         cartItem.className = 'cart-item';
         cartItem.innerHTML = `
@@ -174,50 +122,51 @@ function updateCart() {
         `;
         cartItems.appendChild(cartItem);
     });
-    
-    // Atualizar total
+
     cartTotal.textContent = total.toFixed(2);
-    
-    // Adicionar event listeners aos botões de remover
+
+    // Eventos para remover item
     document.querySelectorAll('.cart-item-remove').forEach(button => {
         button.addEventListener('click', (e) => {
-            const productId = parseInt(e.target.getAttribute('data-id'));
+            const productId = parseInt(e.target.dataset.id);
             removeFromCart(productId);
         });
     });
 }
 
-// Mostrar notificação
+// =========================
+// Notificação estilo Steam
+// =========================
 function showNotification(message) {
-    // Criar elemento de notificação
     const notification = document.createElement('div');
     notification.textContent = message;
     notification.style.cssText = `
         position: fixed;
         bottom: 20px;
         right: 20px;
-        background-color: #2ecc71;
-        color: white;
+        background-color: #141414;
+        color: #66c0f4;
+        border: 1px solid #66c0f4;
         padding: 12px 20px;
         border-radius: 4px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.5);
         z-index: 1001;
-        transition: transform 0.3s, opacity 0.3s;
+        font-weight: 500;
+        opacity: 1;
+        transition: transform 0.5s, opacity 0.5s;
     `;
-    
     document.body.appendChild(notification);
-    
-    // Remover após 3 segundos
+
     setTimeout(() => {
-        notification.style.transform = 'translateY(20px)';
+        notification.style.transform = 'translateY(-20px)';
         notification.style.opacity = '0';
-        setTimeout(() => {
-            document.body.removeChild(notification);
-        }, 300);
-    }, 3000);
+        setTimeout(() => document.body.removeChild(notification), 500);
+    }, 2000);
 }
 
-// Abrir/fechar carrinho
+// =========================
+// Abrir/Fechar carrinho
+// =========================
 cartIcon.addEventListener('click', () => {
     cartSidebar.classList.add('active');
     overlay.classList.add('active');

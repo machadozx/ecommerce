@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Machado Ecommerce</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* ===== Estilos específicos da página de cadastro ===== */
+        body {
+            background-color: #1b1b1b;
+            color: #c7c7c7;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        header {
+            background-color: #141414;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #66c0f4;
+        }
+
+        .logo span {
+            color: #ffffff;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #c7c7c7;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #66c0f4;
+        }
+
+        /* Seção de cadastro */
+        .cadastro-section {
+            max-width: 600px;
+            background-color: #1e1e1e;
+            margin: 4rem auto;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+        }
+
+        .cadastro-section .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .cadastro-text {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #c7c7c7;
+            margin-bottom: 2rem;
+        }
+
+        .cadastro-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .cadastro-form label {
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 0.3rem;
+        }
+
+        .cadastro-form input {
+            padding: 0.8rem 1rem;
+            border-radius: 6px;
+            border: 1px solid #333;
+            background-color: #141414;
+            color: #c7c7c7;
+            font-size: 1rem;
+            transition: border 0.3s, background 0.3s;
+        }
+
+        .cadastro-form input:focus {
+            outline: none;
+            border-color: #66c0f4;
+            background-color: #1b1b1b;
+        }
+
+        .btn-cadastro {
+            padding: 0.8rem;
+            width: 100%;
+            background-color: #66c0f4;
+            border: none;
+            border-radius: 6px;
+            color: #141414;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .btn-cadastro:hover {
+            background-color: #3a9ad9;
+            transform: translateY(-2px);
+        }
+
+        /* Rodapé simples */
+        footer {
+            background-color: #141414;
+            color: #c7c7c7;
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-links {
+            margin-top: 1rem;
+        }
+
+        .footer-links a {
+            color: #66c0f4;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .cadastro-section {
+                padding: 2rem 1.5rem;
+                margin: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">Machado<span>Ecommerce</span></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="cadastro.html">Cadastro</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="cadastro" class="products cadastro-section">
+        <h2 class="section-title">Receba Nossas Promoções</h2>
+        <p class="cadastro-text">Cadastre-se e receba ofertas exclusivas, novidades e descontos diretamente no seu e-mail!</p>
+        <form method="post" class="cadastro-form">
+            <label for="Nome">Nome Completo</label>
+            <input type="text" id="Nome" placeholder="Digite seu nome completo" required>
+
+            <label for="E-mail">E-mail</label>
+            <input type="email" id="E-mail" placeholder="Digite seu e-mail" required>
+
+            <label for="Telefone">Telefone</label>
+            <input type="tel" id="Telefone" placeholder="Digite seu telefone" required>
+
+            <button type="submit" class="btn-cadastro">Confirmar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Machado Ecommerce. Todos os direitos reservados.</p>
+        <div class="footer-links">
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Termos de Serviço</a>
+            <a href="#">Contato</a>
+        </div>
+    </footer>
+</body>
+</html>
