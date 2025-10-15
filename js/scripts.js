@@ -180,4 +180,44 @@ closeCart.addEventListener('click', () => {
 overlay.addEventListener('click', () => {
     cartSidebar.classList.remove('active');
     overlay.classList.remove('active');
+    // === Buscador de CEP ===
+const cepForm = document.getElementById("cep-form");
+if (cepForm) {
+  const cepInput = document.getElementById("cep");
+  const rua = document.getElementById("rua");
+  const bairro = document.getElementById("bairro");
+  const cidade = document.getElementById("cidade");
+  const estado = document.getElementById("estado");
+
+  cepForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const cep = cepInput.value.replace(/\D/g, "");
+
+    if (cep.length !== 8) {
+      alert("Digite um CEP válido com 8 dígitos!");
+      return;
+    }
+
+    try {
+      const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+      const data = await response.json();
+
+      if (data.erro) {
+        alert("CEP não encontrado!");
+        return;
+      }
+
+      rua.textContent = data.logradouro || "Não informado";
+      bairro.textContent = data.bairro || "Não informado";
+      cidade.textContent = data.localidade || "Não informado";
+      estado.textContent = data.uf || "Não informado";
+
+      cepForm.style.boxShadow = "0 0 20px rgba(102,192,244,0.3)";
+    } catch (error) {
+      alert("Erro ao buscar CEP. Tente novamente mais tarde.");
+      console.error(error);
+    }
+  });
+}
+
 });
