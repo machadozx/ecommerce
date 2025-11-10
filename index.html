@@ -125,6 +125,57 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="js/scripts.js"></script> 
+    <script src="js/scripts.js">
+var token = "token da api de voces aqui"; // substitua pelo seu token do crudcrud.com
+    // Exemplo de requisição GET para listar pessoas
+    fetch("https://crudcrud.com/api/"+token+"/pessoas")
+        .then(response => response.json())
+        .then(data => console.log("Lista de pessoas:", data))
+        .catch(error => console.error("Erro no GET:", error));
+
+    // Exemplo de requisição POST para adicionar uma nova pessoa
+    fetch("https://crudcrud.com/api/"+token+"/pessoas", {
+        // metodo de requisição (get, post, put, delete)
+        method: "POST",
+        // cabeçalho da requisição(tipo de conteudo, autorizações, etc...)
+        headers: {
+            "Content-Type": "application/json"
+        },
+        // corpo da requisição (dados que serão enviados)
+        body: JSON.stringify({
+            logradouro: "Rua Exemplo",
+            bairro: "Laranjeiras",
+            cidade: "Rio do Sul"
+        })
+        })
+        .then(response => response.json())
+        .then(data => console.log("pessoa criado:", data))
+        .catch(error => console.error("Erro no POST:", error));
+
+    // Exemplo de requisição PUT para atualizar uma pessoa existente
+        fetch("https://crudcrud.com/api/"+token+"/pessoas/68efd2e8662a3f03e8a681c8", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                logradouro: "Rua Exemplo2",
+                 bairro: "Sumaré",
+                cidade: "Rio do Oeste",
+                estado: "SC"
+            })
+            })
+            .then(() => console.log("Pessoa atualizado com sucesso"))
+            .catch(error => console.error("Erro no PUT:", error));
+
+        // Exemplo de requisição DELETE para remover uma pessoa
+        fetch("https://crudcrud.com/api/"+token+"/pessoas/68efd2e8662a3f03e8a681c8", {
+            method: "DELETE"
+            })
+            .then(() => console.log("Pessoa deletado com sucesso"))
+            .catch(error => console.error("Erro no DELETE:", error));
+
+
+    </script> 
 </body>
 </html>
