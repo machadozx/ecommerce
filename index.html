@@ -1,181 +1,139 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Machado Ecommerce</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MoggedMch - Streetwear</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Cabeçalho -->
-    <header>
-        <div class="header-container">
-            <div class="logo">Machado<span>Ecommerce</span></div>
-            <nav>
-                <ul>
-                    <li><a href="#">Início</a></li>
-                    <li><a href="#products">Produtos</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                    <li><a href="#fidelidade">Fidelidade</a></li>
-                    <li class="cart-icon" id="cart-icon">
-                        Carrinho
-                        <span class="cart-count" id="cart-count">0</span>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Banner principal -->
-    <section class="hero">
-        <h1>Estilo Minimalista para o seu Dia a Dia</h1>
-        <p>Descubra produtos cuidadosamente selecionados com design limpo e funcional</p>
-        <a href="#products" class="btn">Ver Produtos</a>
-    </section>
-
-    <!-- Seção de produtos -->
-    <section class="products" id="products">
-        <h2 class="section-title">Nossos Produtos</h2>
-        <div class="products-grid" id="products-grid">
-            <!-- Os produtos serão inseridos via JavaScript -->
-        </div>
-    </section>
-
-    <!-- Carrinho lateral -->
-    <div class="overlay" id="overlay"></div>
-    <div class="cart-sidebar" id="cart-sidebar">
-        <div class="cart-header">
-            <h3>Seu Carrinho</h3>
-            <button class="close-cart" id="close-cart">&times;</button>
-        </div>
-        <div class="cart-items" id="cart-items">
-            <!-- Itens do carrinho serão inseridos aqui -->
-        </div>
-        <div class="cart-total">
-            Total: R$ <span id="cart-total">0.00</span>
-        </div>
-        <button class="checkout-btn">Finalizar Compra</button>
+  <header>
+    <div class="header-container">
+      <div class="logo">Mogged<span>Mch</span></div>
+      <nav>
+        <ul>
+          <li><a href="#">Início</a></li>
+          <li><a href="#products">Produtos</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li>
+            <a href="carrinho.html" class="cart-button">
+              🛒 <span class="cart-count" id="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <!-- Seções informativas -->
-    <section id="sobre" class="products">
-        <h2 class="section-title">Sobre nós</h2>
-        <p style="color:#c7c7c7;">
-            Nossa loja começou do zero vendendo móveis antigos, mas com o tempo se expandiu. Passamos por diversas dificuldades, mas conseguimos nos recuperar. Hoje somos uma das melhores empresas do Brasil e planejamos expandir futuramente para outros países.
-        </p>
-    </section>
+  <section class="hero" style="background: url('https://images.unsplash.com/photo-1600181954009-58c9be9cf7f8?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Simplicidade que transforma seu estilo.</h1>
+      <p>Explore o poder do minimalismo com peças autênticas e design atemporal.</p>
+    </div>
+  </section>
 
-    <section id="fidelidade" class="products">
-        <h2 class="section-title">Fidelidade</h2>
-        <p style="color:#c7c7c7;">
-            Bem-vindo ao Clube Premium! Aqui, cada compra vale mais:  
-            <br>- Pontos que viram descontos: cada R$1 gasto gera pontos para cupons.  
-            <br>- Descontos exclusivos: promoções especiais para membros.  
-            <br>- Acesso antecipado a lançamentos: seja o primeiro a garantir novos produtos.
-        </p>
-    </section>
+  <section class="products" id="products">
+    <h2 class="section-title">Produtos</h2>
+    <div class="products-grid">
+      <!-- Produto 1 -->
+      <div class="product">
+        <img src="image/Calça Black Frequency.jpg" alt="Calça Black Frequency">
+        <h3>Calça Black Frequency</h3>
+        <span class="price">R$ 389,99</span>
+        <button class="btn add-cart" data-name="Calça Black Frequency" data-price="389.99" data-img="image/Calça Black Frequency.jpg">Adicionar ao carrinho</button>
+      </div>
 
-    <section id="contato" class="products">
-        <h2 class="section-title">Contato</h2>
-        <table border="1">
-            <tr>
-                <td>Cidade</td>
-                <td>UF</td>
-                <td>Endereço</td>
-                <td>Contato</td>
-            </tr>
-            <tr>
-                <td>SC</td>
-                <td>Rio do Sul</td>
-                <td>Av. Oscar Barcelos, 123 - Centro</td>
-                <td>(47) 3521-1234</td>
-            </tr>
-            <tr>
-                <td>SP</td>
-                <td>Pindamonhagaba</td>
-                <td>Av. Alguma Coisa da Silva, 123 - Centro</td>
-                <td>(12) 3442-1844</td>
-            </tr>
-            <tr>
-                <td>AC</td>
-                <td>Rio Branco</td>
-                <td>Rua dos Dinossauros</td>
-                <td>(68) 3432-8234</td>
-            </tr>
-            <tr>
-                <td>GO</td>
-                <td>Luziana</td>
-                <td>Rua Estou Sem Ideia, Almeida</td>
-                <td>(61) 3637-7623</td>
-            </tr>
-        </table>
-    </section>
+      <!-- Produto 2 -->
+      <div class="product">
+        <img src="image/Calça Camo Pants.jpg" alt="Calça Camo Pants">
+        <h3>Calça Camo Pants</h3>
+        <span class="price">R$ 399,99</span>
+        <button class="btn add-cart" data-name="Calça Camo Pants" data-price="399.99" data-img="image/Calça Camo Pants.jpg">Adicionar ao carrinho</button>
+      </div>
 
-    <!-- Rodapé -->
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 Machado Ecommerce. Todos os direitos reservados.</p>
-            <div class="footer-links">
-                <a href="#">Política de Privacidade</a>
-                <a href="#">Termos de Serviço</a>
-                <a href="#">Contato</a>
-            </div>
-        </div>
-    </footer>
+      <!-- Produto 3 -->
+      <div class="product">
+        <img src="image/Calça Liminal Cut.jpg" alt="Calça Liminal Cut">
+        <h3>Calça Liminal Cut</h3>
+        <span class="price">R$ 459,99</span>
+        <button class="btn add-cart" data-name="Calça Liminal Cut" data-price="459.99" data-img="image/Calça Liminal Cut.jpg">Adicionar ao carrinho</button>
+      </div>
 
-    <!-- Scripts -->
-    <script src="js/scripts.js">
-var token = "token da api de voces aqui"; // substitua pelo seu token do crudcrud.com
-    // Exemplo de requisição GET para listar pessoas
-    fetch("https://crudcrud.com/api/"+token+"/pessoas")
-        .then(response => response.json())
-        .then(data => console.log("Lista de pessoas:", data))
-        .catch(error => console.error("Erro no GET:", error));
+      <!-- Produto 4 -->
+      <div class="product">
+        <img src="image/Calça Shilhouette Jeans.jpg" alt="Calça Shilhouette Jeans">
+        <h3>Calça Shilhouette Jeans</h3>
+        <span class="price">R$ 499,99</span>
+        <button class="btn add-cart" data-name="Calça Shilhouette Jeans" data-price="499.99" data-img="image/Calça Shilhouette Jeans.jpg">Adicionar ao carrinho</button>
+      </div>
 
-    // Exemplo de requisição POST para adicionar uma nova pessoa
-    fetch("https://crudcrud.com/api/"+token+"/pessoas", {
-        // metodo de requisição (get, post, put, delete)
-        method: "POST",
-        // cabeçalho da requisição(tipo de conteudo, autorizações, etc...)
-        headers: {
-            "Content-Type": "application/json"
-        },
-        // corpo da requisição (dados que serão enviados)
-        body: JSON.stringify({
-            logradouro: "Rua Exemplo",
-            bairro: "Laranjeiras",
-            cidade: "Rio do Sul"
-        })
-        })
-        .then(response => response.json())
-        .then(data => console.log("pessoa criado:", data))
-        .catch(error => console.error("Erro no POST:", error));
+      <!-- Produto 5 -->
+      <div class="product">
+        <img src="image/Calça Toxic denim double Knee.jpg" alt="Calça Toxic denim double Knee">
+        <h3>Calça Toxic denim double Knee</h3>
+        <span class="price">R$ 329,99</span>
+        <button class="btn add-cart" data-name="Calça Toxic denim double Knee" data-price="329.99" data-img="image/Calça Toxic denim double Knee.jpg">Adicionar ao carrinho</button>
+      </div>
 
-    // Exemplo de requisição PUT para atualizar uma pessoa existente
-        fetch("https://crudcrud.com/api/"+token+"/pessoas/68efd2e8662a3f03e8a681c8", {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                logradouro: "Rua Exemplo2",
-                 bairro: "Sumaré",
-                cidade: "Rio do Oeste",
-                estado: "SC"
-            })
-            })
-            .then(() => console.log("Pessoa atualizado com sucesso"))
-            .catch(error => console.error("Erro no PUT:", error));
+      <!-- Produto 6 -->
+      <div class="product">
+        <img src="image/Calça tramp stamp denim Poison wash.jpg" alt="Calça tramp stamp denim Poison wash">
+        <h3>Calça tramp stamp denim Poison wash</h3>
+        <span class="price">R$ 489,99</span>
+        <button class="btn add-cart" data-name="Calça tramp stamp denim Poison wash" data-price="489.99" data-img="image/Calça tramp stamp denim Poison wash.jpg">Adicionar ao carrinho</button>
+      </div>
 
-        // Exemplo de requisição DELETE para remover uma pessoa
-        fetch("https://crudcrud.com/api/"+token+"/pessoas/68efd2e8662a3f03e8a681c8", {
-            method: "DELETE"
-            })
-            .then(() => console.log("Pessoa deletado com sucesso"))
-            .catch(error => console.error("Erro no DELETE:", error));
+      <!-- Produto 7 -->
+      <div class="product">
+        <img src="image/calça tramp stamp denim Spectro wash.jpg" alt="calça tramp stamp denim Spectro wash">
+        <h3>Calça tramp stamp denim Spectro wash</h3>
+        <span class="price">R$ 299,99</span>
+        <button class="btn add-cart" data-name="Calça tramp stamp denim Spectro wash" data-price="299.99" data-img="image/calça tramp stamp denim Spectro wash.jpg">Adicionar ao carrinho</button>
+      </div>
 
+      <!-- Produto 8 -->
+      <div class="product">
+        <img src="image/Calça void Barrel.jpg" alt="Calça void Barrel">
+        <h3>Calça void Barrel</h3>
+        <span class="price">R$ 429,99</span>
+        <button class="btn add-cart" data-name="Calça void Barrel" data-price="429.99" data-img="image/Calça void Barrel.jpg">Adicionar ao carrinho</button>
+      </div>
 
-    </script> 
+      <!-- Produto 9 -->
+      <div class="product">
+        <img src="image/camisa boxy branca.jpg" alt="camisa boxy branca">
+        <h3>Camisa Boxy Branca</h3>
+        <span class="price">R$ 129,99</span>
+        <button class="btn add-cart" data-name="Camisa Boxy Branca" data-price="129.99" data-img="image/camisa boxy branca.jpg">Adicionar ao carrinho</button>
+      </div>
+
+      <!-- Produto 10 -->
+      <div class="product">
+        <img src="image/camisa boxy cinza.jpg" alt="camisa boxy cinza">
+        <h3>Camisa Boxy Cinza</h3>
+        <span class="price">R$ 199,99</span>
+        <button class="btn add-cart" data-name="Camisa Boxy Cinza" data-price="199.99" data-img="image/camisa boxy cinza.jpg">Adicionar ao carrinho</button>
+      </div>
+
+      <!-- Produto 11 -->
+      <div class="product">
+        <img src="image/camisa oversized preta.jpg" alt="camisa oversized preta">
+        <h3>Camisa Oversized Preta</h3>
+        <span class="price">R$ 299,99</span>
+        <button class="btn add-cart" data-name="Camisa Oversized Preta" data-price="299.99" data-img="image/camisa oversized preta.jpg">Adicionar ao carrinho</button>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 MoggedMch. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/scripts.js"></script>
 </body>
 </html>
